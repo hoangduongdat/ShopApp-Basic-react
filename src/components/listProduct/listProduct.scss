@@ -1,0 +1,23 @@
+@use '../../sass/' as *;
+
+.listProduct {
+    @include flex(unset, center);
+    flex-direction: column;
+   
+    margin-bottom: 50px;
+    width: 100%;
+
+    &-title {
+        font-size: 25px;
+        font-size: 600;
+        padding: 30px;
+    }
+    &-content {
+        @include flex(center,space-between);
+        flex-wrap: wrap;
+        @include mobile {
+            justify-content:center;
+        }
+    }
+
+}

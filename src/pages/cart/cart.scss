@@ -1,0 +1,101 @@
+@use  '../../sass/' as *;
+
+.cart{
+    min-height: calc(100vh - 340px);
+    &-item {
+        @include flex(center,unset);
+        margin-bottom: 20px;
+        border-bottom: 1px solid #666;
+        padding-bottom: 10px;
+        @include mobile {
+            padding: 0 20px 10px 20px;
+        }
+
+        &__img {
+            width: 100px;
+            height: 150px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        &__info {
+            @include flex(center,space-between);
+            flex:1;
+            margin-left: 10px;
+            @include mobile {
+                flex-direction: column  ;
+                align-items: flex-start;
+                margin-left: 30px;
+              &>*{
+                margin-bottom: 5px;
+              }
+               
+            }
+
+            &-quantity {
+                // border-right: 2px solid #666;
+                width: 100px;
+                @include flex(center,space-between);
+               
+                &>span {
+                    width: 100%;
+                    border: 2px solid #666;
+                    @include flex(center,center);
+                    transition: all 0.3s ease;
+                }
+                &>span:nth-child(1), &>span:nth-child(2) {
+                    border-right: none;
+                }
+                &>span:nth-child(1), &>span:nth-child(3) {
+                    &:hover {
+                        background-color: $main-color;
+                        color: $txt-white;
+                    }
+                }
+
+            }
+
+            &-delete {
+                font-size: 25px;
+                transition: color 0.3s ease;
+                &:hover {
+                    color: red;
+                }
+            }
+        }
+    }
+    &-total {
+        @include flex(center,center);
+        flex-direction: column;
+        padding: 50px 0;
+        &>span {
+            width: 220px;
+            height:40px;
+            @include flex(center,center);
+            box-shadow: $box-shadow;
+            border-radius: 20px;
+            font-size: 20px;
+            color:$main-color;
+            // background-color: $main-color;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        &>button {
+            padding: 7px 20px;
+            border-radius: 20px;
+            background-color: $main-color;
+            font-size: 20px;
+            color: $txt-white;
+            border:none;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            &:hover {
+                transform: translateY(-5px);
+                filter: brightness(1.2);
+            }
+        }
+
+    }
+
+}

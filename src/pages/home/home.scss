@@ -1,0 +1,10 @@
+@use '../../sass/' as *;
+.home{
+    @include flex(center,center);
+    // .topProduct {
+    //     @include flex(center,space-between);
+    //     flex-wrap: wrap;
+    // }
+ 
+}
+

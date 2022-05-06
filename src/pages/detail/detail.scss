@@ -1,0 +1,199 @@
+@use '../../sass/' as *;
+
+.detail{
+    @include flex(unset,center);
+
+    @include mobile {
+        flex-direction: column;
+        
+    }
+
+    &-left {
+        width: 40%;
+        margin-right: 20px;
+        @include mobile {
+            width:100%;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+        &__image {
+            height:500px;
+            width: 100%;
+            max-width: 400px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            @include mobile {
+                max-width:100%;
+            }
+            
+        }
+    }
+    &-right {
+        width: 60%;
+        @include mobile {
+            width:100%;
+            padding: 0 10px;
+        }
+
+        &__title{
+            font-size: 25px;
+            font-weight: 600;
+            color: $main-color;
+        }
+        &__rating{
+            margin: 20px 0;
+            &>span {
+                font-size: 18px;
+                font-weight: 600;
+                font-style: italic;
+                
+            }
+            &>div {
+                color: rgb(223, 189, 20);
+                font-size: 20px;
+                margin-top: 10px;
+            }
+        }
+        &__description {
+            font-size: 16px;
+            color: $txt-second-color;
+            font-style: italic;
+            margin-bottom: 30px;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        &__price{
+           font-weight: 600;
+           font-size: 20px;
+        }
+
+        &__quantity{
+            @include flex(unset,unset);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            @include mobile {
+               
+                margin-bottom: 30px;
+            }
+            &-btn {
+                @include flex(center,center);
+                background-color: #999;
+                border-radius: 5px;
+                width: 60px;
+                height: 30px;
+                font-size: 30px;
+                color: $txt-white;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                &:hover {
+                    background-color: $main-color;
+                }
+            }
+            &-text {
+                padding: 10px 20px;
+            }
+           
+        }
+        &__color{
+            @include flex(center,unset);
+            text-transform: capitalize;
+            margin-bottom: 15px;
+            &>p{
+                font-size: 18px;
+                font-weight: 600;
+                margin-right: 10px;
+            }
+            &>div{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                position: relative;
+                margin-right: 15px;
+                @include flex(center,center);
+                &::after {
+                    content: "";
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 50%;
+                    position: absolute;
+                    border: 2px solid #ccc;
+                }
+                &.active::after {
+                    border: 2px solid $main-color;
+                    
+                    
+                }
+                
+            }
+        }
+        &__size{
+            @include flex(center,unset);
+            margin-bottom: 25px;
+            &>p{
+                font-size: 18px;
+                font-weight: 600;
+                margin-right: 10px;
+            }
+            &>span{
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                border: 1px solid $main-color;
+                background-color: transparent;
+                margin-right: 15px;
+                @include flex(center,center);
+                text-transform: uppercase;
+                &.active {
+                    color:$txt-white;
+                    background-color: $main-color;
+                }
+            }
+        }
+        &__total{
+            font-weight: 600;
+            font-size: 20px;
+            font-style: italic;
+        }
+        &__btn{
+            margin-top: 20px;
+            padding: 10px 8px;
+            background-color: $main-color;
+            border: none;
+            border-radius: 5px;
+            color: $txt-white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            &:hover{
+                filter: brightness(1.2);
+                transform: translateY(-5px);
+            }
+        }
+
+    }
+
+}
+
+.detail-header {
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    width: 100%;
+    @include tablet {
+        padding: 0 10px;
+    }
+}
+.detail-text{
+    @include tablet {
+        padding: 0 10px;
+        width: 100%;
+        display: block;
+    }
+}

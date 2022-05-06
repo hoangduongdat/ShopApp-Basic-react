@@ -1,0 +1,46 @@
+@use '../../sass/' as *;
+
+.footer {
+    width: 100%;
+    position: relative;
+    background-color: $main-color;
+    min-height: 100px;
+    padding: 2rem 4rem;
+    @include flex(center,center);
+    flex-wrap: wrap;
+    flex-direction: column;
+    @include mobile {
+        padding: 2rem 1rem;
+    }
+
+    &-social__icon, &-social__menu {
+        position: relative;
+        @include flex(center,center);
+        margin: .8rem 0;
+
+        & > li >a{
+            font-size: 2rem;
+            color: #fff;
+            margin: 0 1rem;
+            display: inline-block;
+            transition: all 0.5s ease;
+
+            &:hover {
+                transform: translateY(-10px);
+            }
+        }
+    }
+
+    &-social__menu>li > a {
+        font-size: 1.2rem;
+    }
+
+    &> p {
+        color: #ccc;
+        text-align: center;
+        margin-top: 1rem;
+        
+        font-size: 1.1rem;
+    }
+   
+}
